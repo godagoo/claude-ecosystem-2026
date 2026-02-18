@@ -8,7 +8,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
   <!-- Reveal.js -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
@@ -19,104 +19,81 @@
 
   <style>
 /*
- * Luxury Dark Blue Glass Theme
- * Premium glassmorphism with deep blue palette
- * For use with Reveal.js 4.5+
+ * Autonomee.ai Presentation Theme
+ * Editorial, minimal, serif headlines
+ * Adapted for fullscreen Reveal.js 4.5+
  */
 
-/* ===== CSS VARIABLES ===== */
+/* ===== CSS VARIABLES - AUTONOMEE PALETTE ===== */
 :root {
-  /* Primary Colors - Deep Blue Base */
-  --pres-bg-primary: #030712;
-  --pres-bg-secondary: #0a1628;
-  --pres-bg-card: rgba(15, 30, 55, 0.6);
-  --pres-bg-card-hover: rgba(20, 40, 70, 0.7);
+  /* Backgrounds */
+  --bg-dark: #0a0a0a;
+  --bg-card: #111111;
+  --bg-card-hover: #1a1a1a;
 
-  /* Accent Colors - Blue Dominant */
-  --pres-purple: #3B82F6;
-  --pres-purple-light: #60A5FA;
-  --pres-purple-dark: #1E40AF;
-  --pres-violet: #2563EB;
-  --pres-pink: #818CF8;
-  --pres-cyan: #22D3EE;
-  --pres-orange: #F59E0B;
-  --pres-red: #EF4444;
-  --pres-green: #10B981;
-  --pres-yellow: #FBBF24;
+  /* Accent - Muted Steel Blue */
+  --accent: #7b8fa8;
+  --accent-light: #9bb0c9;
+  --accent-dark: #5a6d80;
+  --accent-glow: rgba(123, 143, 168, 0.15);
+
+  /* Semantic Colors - Muted */
+  --success: #7b9a7b;
+  --warning: #c9a85b;
+  --error: #c97b7b;
 
   /* Text Colors */
-  --pres-text-primary: #F8FAFC;
-  --pres-text-secondary: rgba(248, 250, 252, 0.75);
-  --pres-text-muted: rgba(248, 250, 252, 0.5);
+  --text-primary: #f5f4f0;
+  --text-secondary: #a8a8a8;
+  --text-muted: #666666;
 
-  /* Gradients - Luxury Blue */
-  --pres-gradient-purple: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #60A5FA 100%);
-  --pres-gradient-dark: linear-gradient(135deg, #0a1628 0%, #030712 100%);
-  --pres-gradient-glow: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
-  --pres-gradient-hero: linear-gradient(135deg, #0a1628 0%, #030712 50%, #051025 100%);
-  --pres-gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
-
-  /* Shadows & Effects */
-  --pres-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --pres-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
-  --pres-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --pres-shadow-glow: 0 0 60px rgba(59, 130, 246, 0.2);
-  --pres-shadow-glow-sm: 0 0 30px rgba(59, 130, 246, 0.15);
-
-  /* Glass Effects */
-  --pres-glass-bg: rgba(15, 30, 55, 0.4);
-  --pres-glass-border: rgba(255, 255, 255, 0.08);
-  --pres-glass-blur: 20px;
-
-  /* Border */
-  --pres-border-color: rgba(255, 255, 255, 0.06);
-  --pres-border-radius: 16px;
-  --pres-border-radius-lg: 24px;
-
-  /* Spacing */
-  --pres-spacing-xs: 8px;
-  --pres-spacing-sm: 16px;
-  --pres-spacing-md: 24px;
-  --pres-spacing-lg: 40px;
-  --pres-spacing-xl: 60px;
+  /* Borders */
+  --border: #2a2a2a;
 
   /* Typography */
-  --pres-font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --pres-font-size-xs: 0.75rem;
-  --pres-font-size-sm: 0.875rem;
-  --pres-font-size-base: 1rem;
-  --pres-font-size-lg: 1.25rem;
-  --pres-font-size-xl: 1.5rem;
-  --pres-font-size-2xl: 2rem;
-  --pres-font-size-3xl: 2.5rem;
-  --pres-font-size-4xl: 3.5rem;
-  --pres-font-size-5xl: 4.5rem;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 60px;
 }
 
 /* ===== BASE STYLES ===== */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
+  background: var(--bg-dark) !important;
+  color: var(--text-primary);
 }
 
 body {
-  font-family: var(--pres-font-family);
-  background: var(--pres-bg-primary);
-  color: var(--pres-text-primary);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.reveal-viewport {
+  background: var(--bg-dark) !important;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px) !important;
+  background-size: 60px 60px !important;
+}
+
 .reveal {
-  font-family: var(--pres-font-family);
+  font-family: var(--font-sans);
   font-size: clamp(14px, 1.5vw, 20px);
-  color: var(--pres-text-primary);
+  color: var(--text-primary);
+  background: var(--bg-dark);
   height: 100vh;
   width: 100vw;
 }
@@ -133,6 +110,7 @@ body {
   width: 100vw !important;
   top: 0 !important;
   left: 0 !important;
+  background: var(--bg-dark);
 }
 
 /* ===== SLIDE BASE ===== */
@@ -144,43 +122,9 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  background: var(--pres-bg-primary);
+  background: transparent;
   position: relative;
   overflow: hidden;
-}
-
-/* Animated Background Orbs */
-.slide::before {
-  content: '';
-  position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 50%;
-  height: 60%;
-  background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-  animation: floatOrb 20s ease-in-out infinite;
-}
-
-.slide::after {
-  content: '';
-  position: absolute;
-  bottom: -20%;
-  left: -10%;
-  width: 40%;
-  height: 50%;
-  background: radial-gradient(ellipse at center, rgba(34, 211, 238, 0.05) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-  animation: floatOrb 25s ease-in-out infinite reverse;
-}
-
-@keyframes floatOrb {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-  25% { transform: translate(5%, 10%) scale(1.05); opacity: 0.8; }
-  50% { transform: translate(-5%, 5%) scale(0.95); opacity: 0.5; }
-  75% { transform: translate(3%, -5%) scale(1.02); opacity: 0.7; }
 }
 
 .slide > * {
@@ -195,28 +139,30 @@ body {
   text-align: center;
 }
 
-.slide--gradient {
-  background: var(--pres-gradient-hero);
-}
-
-.slide--gradient::before {
-  background: radial-gradient(ellipse at 30% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 60%);
-}
-
-.slide--gradient::after {
-  background: radial-gradient(ellipse at 70% 70%, rgba(34, 211, 238, 0.08) 0%, transparent 50%);
-}
-
-.slide--warning {
-  background: linear-gradient(135deg, #0a1628 0%, #1a1015 50%, #150808 100%);
+.slide--section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .slide--warning::before {
-  background: radial-gradient(ellipse at 30% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 60%);
-}
-
-.slide--warning::after {
-  background: radial-gradient(ellipse at 70% 70%, rgba(239, 68, 68, 0.05) 0%, transparent 50%);
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201, 123, 123, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* ===== HEADER BAR ===== */
@@ -226,86 +172,112 @@ body {
   align-items: center;
   padding-bottom: clamp(4px, 0.5vh, 8px);
   margin-bottom: clamp(8px, 1vh, 16px);
+  border-bottom: 1px solid var(--border);
   flex-shrink: 0;
 }
 
 .header__logo {
-  font-weight: 600;
+  font-family: var(--font-serif);
   font-size: clamp(10px, 1vw, 14px);
-  color: var(--pres-text-secondary);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* ===== TYPOGRAPHY - EDITORIAL STYLE ===== */
 .kicker {
   font-size: clamp(10px, 1.2vw, 14px);
-  color: var(--pres-purple-light);
+  color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.25em;
   margin-bottom: clamp(8px, 1vh, 16px);
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   flex-shrink: 0;
 }
 
+.kicker::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.5;
+}
+
 .kicker--warning {
-  color: var(--pres-red);
+  color: var(--error);
+}
+.kicker--warning::after {
+  background: var(--error);
 }
 
 .kicker--success {
-  color: var(--pres-green);
+  color: var(--success);
+}
+.kicker--success::after {
+  background: var(--success);
 }
 
 h1, .h1 {
+  font-family: var(--font-serif);
   font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 700;
+  font-weight: 400;
+  font-style: italic;
   line-height: 1.1;
   margin: 0 0 clamp(12px, 2vh, 24px) 0;
-  letter-spacing: -0.02em;
+  color: var(--text-primary);
   flex-shrink: 0;
 }
 
 h2, .h2 {
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 400;
   line-height: 1.15;
   margin: 0 0 clamp(8px, 1.5vh, 20px) 0;
-  letter-spacing: -0.02em;
   flex-shrink: 0;
 }
 
 h3, .h3 {
+  font-family: var(--font-serif);
   font-size: clamp(1rem, 2vw, 1.5rem);
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.3;
   margin: 0 0 clamp(4px, 1vh, 12px) 0;
 }
 
 h4, .h4 {
+  font-family: var(--font-sans);
   font-size: clamp(0.85rem, 1.3vw, 1.1rem);
-  font-weight: 600;
+  font-weight: 500;
   margin: 0 0 4px 0;
+  letter-spacing: 0.02em;
 }
 
 .lead {
   font-size: clamp(0.9rem, 1.4vw, 1.15rem);
-  color: var(--pres-text-secondary);
-  line-height: 1.5;
-  max-width: 700px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 600px;
   flex-shrink: 0;
 }
 
-.muted {
-  color: var(--pres-text-muted);
+.muted { color: var(--text-muted); }
+
+.highlight, .accent-text {
+  color: var(--accent);
 }
 
-.highlight {
-  color: var(--pres-purple);
-}
-
-.gradient-text {
-  background: var(--pres-gradient-purple);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* ===== CODE STYLING ===== */
+code, .code {
+  font-family: var(--font-mono);
+  background: rgba(123, 143, 168, 0.1);
+  padding: 2px 8px;
+  font-size: 0.85em;
+  color: var(--accent-light);
+  border: 1px solid var(--border);
 }
 
 /* ===== LAYOUT UTILITIES ===== */
@@ -327,13 +299,8 @@ h4, .h4 {
   overflow: hidden;
 }
 
-.split--60-40 {
-  grid-template-columns: 1.5fr 1fr;
-}
-
-.split--40-60 {
-  grid-template-columns: 1fr 1.5fr;
-}
+.split--60-40 { grid-template-columns: 1.5fr 1fr; }
+.split--40-60 { grid-template-columns: 1fr 1.5fr; }
 
 .grid-2 {
   display: grid;
@@ -361,70 +328,67 @@ h4, .h4 {
   justify-content: center;
 }
 
-/* ===== CARDS - GLASSMORPHISM ===== */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(12px, 1.5vw, 24px);
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.two-col > * { overflow: hidden; }
+
+/* ===== CARDS - TRANSPARENT, MINIMAL ===== */
 .card {
-  background: var(--pres-glass-bg);
-  backdrop-filter: blur(var(--pres-glass-blur));
-  -webkit-backdrop-filter: blur(var(--pres-glass-blur));
-  border: 1px solid var(--pres-glass-border);
-  border-radius: var(--pres-border-radius);
+  background: transparent;
+  border: 1px solid var(--border);
   padding: clamp(12px, 1.5vh, 20px) clamp(14px, 1.5vw, 20px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   overflow: hidden;
   position: relative;
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-}
-
-.card--glow {
-  box-shadow: var(--pres-shadow-glow-sm), inset 0 1px 0 rgba(255,255,255,0.1);
-  border-color: rgba(59, 130, 246, 0.25);
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(15, 30, 55, 0.5) 100%);
+.card--featured {
+  border-color: var(--accent);
 }
 
 .card--warning {
-  border-color: rgba(239, 68, 68, 0.25);
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, rgba(15, 20, 30, 0.5) 100%);
+  border-color: var(--error);
 }
 
 .card__icon {
   width: clamp(24px, 3vw, 36px);
   height: clamp(24px, 3vw, 36px);
   margin-bottom: 4px;
-  color: var(--pres-purple);
+  color: var(--accent);
 }
 
 .card__icon svg {
   width: 100%;
   height: 100%;
+  stroke-width: 1.5;
 }
 
-.card__icon--green { color: var(--pres-green); }
-.card__icon--red { color: var(--pres-red); }
-.card__icon--orange { color: var(--pres-orange); }
-.card__icon--cyan { color: var(--pres-cyan); }
+.card__icon--green { color: var(--success); }
+.card__icon--red { color: var(--error); }
+.card__icon--orange { color: var(--warning); }
+.card__icon--cyan { color: #6ba3b0; }
 
 .card__title {
+  font-family: var(--font-sans);
   font-size: clamp(0.85rem, 1.3vw, 1.1rem);
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 4px;
 }
 
 .card__text {
   font-size: clamp(0.7rem, 1vw, 0.85rem);
-  color: var(--pres-text-secondary);
+  color: var(--text-muted);
   line-height: 1.4;
 }
 
-/* ===== LISTS ===== */
+/* ===== LISTS - DASH STYLE ===== */
 .list {
   list-style: none;
   padding: 0;
@@ -437,112 +401,105 @@ h4, .h4 {
   position: relative;
   font-size: clamp(0.75rem, 1.1vw, 0.9rem);
   line-height: 1.3;
+  border-bottom: 1px solid var(--border);
 }
 
+.list li:last-child { border-bottom: none; }
+
 .list li::before {
-  content: '';
+  content: '—';
   position: absolute;
   left: 0;
-  top: clamp(6px, 0.8vh, 10px);
-  width: 5px;
-  height: 5px;
-  background: linear-gradient(135deg, var(--pres-purple) 0%, var(--pres-cyan) 100%);
-  border-radius: 50%;
+  top: clamp(2px, 0.4vh, 6px);
+  color: var(--accent);
+  font-weight: 400;
 }
 
 .list--check li::before {
   content: '✓';
-  width: auto;
-  height: auto;
-  background: none;
-  color: var(--pres-green);
+  color: var(--success);
   font-weight: bold;
-  top: clamp(2px, 0.4vh, 6px);
   font-size: clamp(0.75rem, 1vw, 0.9rem);
 }
 
 .list--cross li::before {
   content: '✗';
-  width: auto;
-  height: auto;
-  background: none;
-  color: var(--pres-red);
+  color: var(--error);
   font-weight: bold;
-  top: clamp(2px, 0.4vh, 6px);
   font-size: clamp(0.75rem, 1vw, 0.9rem);
 }
 
-/* ===== BADGES - GLASS ===== */
+/* ===== BADGES - OUTLINED ===== */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 4px;
   padding: clamp(3px, 0.5vh, 5px) clamp(8px, 1vw, 12px);
-  border-radius: 20px;
   font-size: clamp(0.6rem, 0.9vw, 0.75rem);
   font-weight: 500;
-  background: rgba(59, 130, 246, 0.12);
-  color: var(--pres-purple-light);
-  border: 1px solid rgba(59, 130, 246, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
   white-space: nowrap;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
 
 .badge--success {
-  background: rgba(16, 185, 129, 0.12);
-  color: #10B981;
-  border-color: rgba(16, 185, 129, 0.25);
+  color: var(--success);
+  border-color: var(--success);
 }
 
 .badge--warning {
-  background: rgba(251, 191, 36, 0.12);
-  color: #FBBF24;
-  border-color: rgba(251, 191, 36, 0.25);
+  color: var(--warning);
+  border-color: var(--warning);
 }
 
 .badge--danger {
-  background: rgba(239, 68, 68, 0.12);
-  color: #ef4444;
-  border-color: rgba(239, 68, 68, 0.25);
+  color: var(--error);
+  border-color: var(--error);
 }
 
 /* ===== PRICING ===== */
 .pricing {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: clamp(8px, 1vw, 14px);
 }
 
 .pricing__card {
-  background: var(--pres-bg-card);
-  border: 1px solid var(--pres-border-color);
-  border-radius: var(--pres-border-radius);
+  background: transparent;
+  border: 1px solid var(--border);
   padding: clamp(10px, 1.2vh, 16px) clamp(8px, 1vw, 14px);
   text-align: center;
+  transition: all 0.3s ease;
 }
 
 .pricing__card--featured {
-  border-color: var(--pres-purple);
-  box-shadow: var(--pres-shadow-glow-sm);
+  border-color: var(--accent);
 }
 
 .pricing__name {
+  font-family: var(--font-serif);
   font-size: clamp(0.75rem, 1vw, 0.9rem);
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 4px;
 }
 
 .pricing__price {
+  font-family: var(--font-serif);
   font-size: clamp(1rem, 1.8vw, 1.5rem);
-  font-weight: 700;
-  color: var(--pres-purple);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent);
   margin-bottom: 2px;
 }
 
 .pricing__period {
   font-size: clamp(0.6rem, 0.8vw, 0.7rem);
-  color: var(--pres-text-muted);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* ===== TABLES ===== */
@@ -556,24 +513,20 @@ h4, .h4 {
 .comparison-table td {
   padding: clamp(6px, 0.8vh, 10px) clamp(8px, 1vw, 12px);
   text-align: left;
-  border-bottom: 1px solid var(--pres-border-color);
+  border-bottom: 1px solid var(--border);
 }
 
 .comparison-table th {
-  background: var(--pres-bg-card);
-  font-weight: 600;
-  color: var(--pres-purple-light);
+  background: var(--bg-card);
+  font-weight: 500;
+  color: var(--accent);
   font-size: clamp(0.55rem, 0.8vw, 0.7rem);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .comparison-table td {
-  color: var(--pres-text-secondary);
-}
-
-.comparison-table tr:hover td {
-  background: var(--pres-bg-card);
+  color: var(--text-secondary);
 }
 
 /* ===== DIAGRAM STYLES ===== */
@@ -594,22 +547,23 @@ h4, .h4 {
 
 /* ===== REVEAL.JS OVERRIDES ===== */
 .reveal .controls {
-  color: var(--pres-purple);
+  color: var(--accent);
 }
 
 .reveal .progress {
-  background: var(--pres-border-color);
-  height: 3px;
+  background: var(--border);
+  height: 2px;
 }
 
 .reveal .progress span {
-  background: var(--pres-purple);
+  background: var(--accent);
 }
 
 .reveal .slide-number {
   background: transparent;
-  color: var(--pres-text-muted);
-  font-size: 14px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: var(--font-mono);
   right: 20px;
   bottom: 20px;
 }
@@ -632,7 +586,7 @@ h4, .h4 {
   transform: translateY(0);
 }
 
-/* Custom utility classes */
+/* ===== UTILITY CLASSES ===== */
 .text-center { text-align: center; }
 .text-sm { font-size: clamp(0.7rem, 1vw, 0.875rem); }
 .text-xs { font-size: clamp(0.6rem, 0.85vw, 0.75rem); }
@@ -642,18 +596,11 @@ h4, .h4 {
 .mb-sm { margin-bottom: clamp(6px, 0.8vh, 12px); }
 .mb-md { margin-bottom: clamp(10px, 1.2vh, 18px); }
 
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(12px, 1.5vw, 24px);
-  flex: 1;
-  min-height: 0;
-  overflow: hidden;
-}
-
-.two-col > * {
-  overflow: hidden;
-}
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--border); }
+::selection { background: var(--accent); color: var(--bg-dark); }
   </style>
 </head>
 <body>
@@ -662,10 +609,10 @@ h4, .h4 {
 
 <!-- SLIDE 1: TITLE -->
 <section>
-  <div class="slide slide--gradient slide--center">
+  <div class="slide slide--section slide--center">
     <div class="content flex-center" style="flex-direction: column; text-align: center;">
-      <p class="kicker">Complete Guide 2026</p>
-      <h1>The Claude<br><span class="gradient-text">Ecosystem</span></h1>
+      <p class="kicker" style="justify-content: center;">Complete Guide 2026</p>
+      <h1>The Claude<br><span class="accent-text">Ecosystem</span></h1>
       <p class="lead" style="max-width: 700px; margin: 0 auto;">
         Every interface explained. What each costs. What each does and doesn't do.
       </p>
@@ -690,7 +637,7 @@ h4, .h4 {
     <div class="split">
       <div>
         <p class="kicker">The Infrastructure</p>
-        <h2>I'm Addicted to<br><span class="gradient-text">Claude Code</span></h2>
+        <h2>I'm Addicted to<br><span class="accent-text">Claude Code</span></h2>
         <p class="lead">Not because of the AI model. Because of what I built around it.</p>
         <ul class="list mt-md">
           <li>Notion integration</li>
@@ -702,8 +649,8 @@ h4, .h4 {
         </ul>
       </div>
       <div>
-        <div class="card card--glow" style="text-align: center;">
-          <div style="font-size: 4rem; font-weight: 700; color: var(--pres-purple);">$200+</div>
+        <div class="card card--featured" style="text-align: center;">
+          <div style="font-family: var(--font-serif); font-size: 4rem; font-weight: 400; font-style: italic; color: var(--accent);">$200+</div>
           <div class="text-sm muted">per month investment</div>
           <div class="mt-md text-sm">Max Plan + API costs</div>
         </div>
@@ -727,114 +674,106 @@ h4, .h4 {
       <h2>How It All Connects</h2>
       <div class="diagram mt-sm" style="flex: 1; max-height: calc(100vh - 180px);">
         <svg viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
-          <!-- Background -->
           <defs>
-            <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:1" />
+            <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#5a6d80;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#9bb0c9;stop-opacity:1" />
             </linearGradient>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-              <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
           </defs>
 
           <!-- Foundation Layer -->
-          <rect x="50" y="380" width="800" height="60" rx="10" fill="#16161f" stroke="#3B82F6" stroke-opacity="0.3"/>
-          <text x="450" y="395" fill="#60A5FA" font-size="11" text-anchor="middle" font-weight="600">FOUNDATION</text>
-          <text x="200" y="420" fill="white" font-size="14" text-anchor="middle" font-weight="600">Opus</text>
-          <text x="200" y="432" fill="#888" font-size="10" text-anchor="middle">Flagship</text>
-          <text x="450" y="420" fill="white" font-size="14" text-anchor="middle" font-weight="600">Sonnet</text>
-          <text x="450" y="432" fill="#888" font-size="10" text-anchor="middle">Everyday</text>
-          <text x="700" y="420" fill="white" font-size="14" text-anchor="middle" font-weight="600">Haiku</text>
-          <text x="700" y="432" fill="#888" font-size="10" text-anchor="middle">Fast & Cheap</text>
+          <rect x="50" y="380" width="800" height="60" rx="0" fill="#111111" stroke="#2a2a2a"/>
+          <text x="450" y="395" fill="#7b8fa8" font-size="11" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif" text-transform="uppercase" letter-spacing="0.1em">FOUNDATION</text>
+          <text x="200" y="420" fill="#f5f4f0" font-size="14" text-anchor="middle" font-weight="500" font-family="Playfair Display, serif">Opus 4.6</text>
+          <text x="200" y="432" fill="#666" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Flagship</text>
+          <text x="450" y="420" fill="#f5f4f0" font-size="14" text-anchor="middle" font-weight="500" font-family="Playfair Display, serif">Sonnet 4.6</text>
+          <text x="450" y="432" fill="#666" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Everyday</text>
+          <text x="700" y="420" fill="#f5f4f0" font-size="14" text-anchor="middle" font-weight="500" font-family="Playfair Display, serif">Haiku 4.5</text>
+          <text x="700" y="432" fill="#666" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Fast &amp; Cheap</text>
 
           <!-- Interfaces Layer -->
-          <rect x="50" y="200" width="800" height="160" rx="10" fill="#16161f" stroke="#3B82F6" stroke-opacity="0.3"/>
-          <text x="450" y="218" fill="#60A5FA" font-size="11" text-anchor="middle" font-weight="600">INTERFACES</text>
+          <rect x="50" y="200" width="800" height="160" rx="0" fill="#111111" stroke="#2a2a2a"/>
+          <text x="450" y="218" fill="#7b8fa8" font-size="11" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">INTERFACES</text>
 
           <!-- Chat -->
-          <rect x="70" y="235" width="100" height="60" rx="8" fill="#1c1c28" stroke="#3B82F6" stroke-opacity="0.5"/>
-          <text x="120" y="260" fill="white" font-size="12" text-anchor="middle" font-weight="600">Chat</text>
-          <text x="120" y="278" fill="#888" font-size="9" text-anchor="middle">Web/Apps</text>
+          <rect x="70" y="235" width="100" height="60" rx="0" fill="#141414" stroke="#7b8fa8" stroke-opacity="0.4"/>
+          <text x="120" y="260" fill="#f5f4f0" font-size="12" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Chat</text>
+          <text x="120" y="278" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Web/Apps</text>
 
           <!-- Claude Code Box -->
-          <rect x="190" y="235" width="280" height="110" rx="8" fill="#1c1c28" stroke="url(#purpleGrad)" stroke-width="2"/>
-          <text x="330" y="255" fill="white" font-size="12" text-anchor="middle" font-weight="600">Claude Code</text>
-          <text x="330" y="270" fill="#888" font-size="9" text-anchor="middle">3 Doors, Same Product</text>
+          <rect x="190" y="235" width="280" height="110" rx="0" fill="#141414" stroke="url(#accentGrad)" stroke-width="2"/>
+          <text x="330" y="255" fill="#f5f4f0" font-size="12" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Claude Code</text>
+          <text x="330" y="270" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">3 Doors, Same Product</text>
           <!-- Three doors -->
-          <rect x="205" y="285" width="75" height="45" rx="6" fill="#252530"/>
-          <text x="242" y="305" fill="#60A5FA" font-size="10" text-anchor="middle">Terminal</text>
-          <text x="242" y="318" fill="#888" font-size="8" text-anchor="middle">Full Power</text>
-          <rect x="292" y="285" width="75" height="45" rx="6" fill="#252530"/>
-          <text x="330" y="305" fill="#60A5FA" font-size="10" text-anchor="middle">Desktop</text>
-          <text x="330" y="318" fill="#888" font-size="8" text-anchor="middle">Visual</text>
-          <rect x="380" y="285" width="75" height="45" rx="6" fill="#252530"/>
-          <text x="418" y="305" fill="#60A5FA" font-size="10" text-anchor="middle">Web</text>
-          <text x="418" y="318" fill="#888" font-size="8" text-anchor="middle">Anywhere</text>
+          <rect x="205" y="285" width="75" height="45" rx="0" fill="#1a1a1a"/>
+          <text x="242" y="305" fill="#9bb0c9" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Terminal</text>
+          <text x="242" y="318" fill="#666" font-size="8" text-anchor="middle" font-family="Inter, sans-serif">Full Power</text>
+          <rect x="292" y="285" width="75" height="45" rx="0" fill="#1a1a1a"/>
+          <text x="330" y="305" fill="#9bb0c9" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Desktop</text>
+          <text x="330" y="318" fill="#666" font-size="8" text-anchor="middle" font-family="Inter, sans-serif">Visual</text>
+          <rect x="380" y="285" width="75" height="45" rx="0" fill="#1a1a1a"/>
+          <text x="418" y="305" fill="#9bb0c9" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Web</text>
+          <text x="418" y="318" fill="#666" font-size="8" text-anchor="middle" font-family="Inter, sans-serif">Anywhere</text>
 
           <!-- Chrome -->
-          <rect x="490" y="235" width="100" height="60" rx="8" fill="#1c1c28" stroke="#22D3EE" stroke-opacity="0.5"/>
-          <text x="540" y="260" fill="white" font-size="12" text-anchor="middle" font-weight="600">Chrome</text>
-          <text x="540" y="278" fill="#888" font-size="9" text-anchor="middle">Browser Agent</text>
+          <rect x="490" y="235" width="100" height="60" rx="0" fill="#141414" stroke="#6ba3b0" stroke-opacity="0.5"/>
+          <text x="540" y="260" fill="#f5f4f0" font-size="12" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Chrome</text>
+          <text x="540" y="278" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Browser Agent</text>
 
           <!-- Cowork -->
-          <rect x="610" y="235" width="100" height="60" rx="8" fill="#1c1c28" stroke="#F97316" stroke-opacity="0.5"/>
-          <text x="660" y="260" fill="white" font-size="12" text-anchor="middle" font-weight="600">Cowork</text>
-          <text x="660" y="278" fill="#888" font-size="9" text-anchor="middle">File Agent</text>
+          <rect x="610" y="235" width="100" height="60" rx="0" fill="#141414" stroke="#c9a85b" stroke-opacity="0.5"/>
+          <text x="660" y="260" fill="#f5f4f0" font-size="12" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Cowork</text>
+          <text x="660" y="278" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">File Agent</text>
 
           <!-- Mobile -->
-          <rect x="730" y="235" width="100" height="60" rx="8" fill="#1c1c28" stroke="#EC4899" stroke-opacity="0.5"/>
-          <text x="780" y="260" fill="white" font-size="12" text-anchor="middle" font-weight="600">Mobile</text>
-          <text x="780" y="278" fill="#888" font-size="9" text-anchor="middle">iOS/Android</text>
+          <rect x="730" y="235" width="100" height="60" rx="0" fill="#141414" stroke="#a87b9b" stroke-opacity="0.5"/>
+          <text x="780" y="260" fill="#f5f4f0" font-size="12" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Mobile</text>
+          <text x="780" y="278" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">iOS/Android</text>
 
           <!-- Infrastructure Layer -->
-          <rect x="50" y="30" width="800" height="150" rx="10" fill="#16161f" stroke="#3B82F6" stroke-opacity="0.3"/>
-          <text x="450" y="48" fill="#60A5FA" font-size="11" text-anchor="middle" font-weight="600">INFRASTRUCTURE (Terminal Only)</text>
+          <rect x="50" y="30" width="800" height="150" rx="0" fill="#111111" stroke="#2a2a2a"/>
+          <text x="450" y="48" fill="#7b8fa8" font-size="11" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">INFRASTRUCTURE (Terminal + Desktop + Web)</text>
 
           <!-- MCP -->
-          <rect x="80" y="65" width="170" height="100" rx="8" fill="#252530" stroke="#3B82F6" stroke-opacity="0.3"/>
-          <text x="165" y="90" fill="white" font-size="12" text-anchor="middle" font-weight="600">MCP</text>
-          <text x="165" y="105" fill="#888" font-size="9" text-anchor="middle">Model Context Protocol</text>
-          <text x="165" y="125" fill="#60A5FA" font-size="9" text-anchor="middle">Notion, Google, APIs</text>
-          <text x="165" y="140" fill="#60A5FA" font-size="9" text-anchor="middle">Databases, Browser</text>
+          <rect x="80" y="65" width="170" height="100" rx="0" fill="#1a1a1a" stroke="#7b8fa8" stroke-opacity="0.3"/>
+          <text x="165" y="90" fill="#f5f4f0" font-size="12" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">MCP</text>
+          <text x="165" y="105" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Model Context Protocol</text>
+          <text x="165" y="125" fill="#9bb0c9" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Notion, Google, APIs</text>
+          <text x="165" y="140" fill="#9bb0c9" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Databases, Browser</text>
 
           <!-- Hooks -->
-          <rect x="270" y="65" width="140" height="100" rx="8" fill="#252530" stroke="#22C55E" stroke-opacity="0.3"/>
-          <text x="340" y="90" fill="white" font-size="12" text-anchor="middle" font-weight="600">Hooks</text>
-          <text x="340" y="108" fill="#888" font-size="9" text-anchor="middle">Pre/Post Scripts</text>
-          <text x="340" y="128" fill="#22C55E" font-size="9" text-anchor="middle">Logging</text>
-          <text x="340" y="143" fill="#22C55E" font-size="9" text-anchor="middle">Validation</text>
+          <rect x="270" y="65" width="140" height="100" rx="0" fill="#1a1a1a" stroke="#7b9a7b" stroke-opacity="0.3"/>
+          <text x="340" y="90" fill="#f5f4f0" font-size="12" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Hooks</text>
+          <text x="340" y="108" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Pre/Post Scripts</text>
+          <text x="340" y="128" fill="#7b9a7b" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Logging</text>
+          <text x="340" y="143" fill="#7b9a7b" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Validation</text>
 
           <!-- Skills -->
-          <rect x="430" y="65" width="140" height="100" rx="8" fill="#252530" stroke="#818CF8" stroke-opacity="0.3"/>
-          <text x="500" y="90" fill="white" font-size="12" text-anchor="middle" font-weight="600">Skills</text>
-          <text x="500" y="108" fill="#888" font-size="9" text-anchor="middle">Specialized Modes</text>
-          <text x="500" y="128" fill="#818CF8" font-size="9" text-anchor="middle">Research, Packaging</text>
-          <text x="500" y="143" fill="#818CF8" font-size="9" text-anchor="middle">Sponsors, Slides</text>
+          <rect x="430" y="65" width="140" height="100" rx="0" fill="#1a1a1a" stroke="#a87b9b" stroke-opacity="0.3"/>
+          <text x="500" y="90" fill="#f5f4f0" font-size="12" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Skills</text>
+          <text x="500" y="108" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Specialized Modes</text>
+          <text x="500" y="128" fill="#a87b9b" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Research, Packaging</text>
+          <text x="500" y="143" fill="#a87b9b" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Sponsors, Slides</text>
 
           <!-- Sub-Agents -->
-          <rect x="590" y="65" width="140" height="100" rx="8" fill="#252530" stroke="#22D3EE" stroke-opacity="0.3"/>
-          <text x="660" y="90" fill="white" font-size="12" text-anchor="middle" font-weight="600">Sub-Agents</text>
-          <text x="660" y="108" fill="#888" font-size="9" text-anchor="middle">Delegation</text>
-          <text x="660" y="128" fill="#22D3EE" font-size="9" text-anchor="middle">Parallel Work</text>
-          <text x="660" y="143" fill="#22D3EE" font-size="9" text-anchor="middle">Task Spawning</text>
+          <rect x="590" y="65" width="140" height="100" rx="0" fill="#1a1a1a" stroke="#6ba3b0" stroke-opacity="0.3"/>
+          <text x="660" y="90" fill="#f5f4f0" font-size="12" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Agent Teams</text>
+          <text x="660" y="108" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Coordination</text>
+          <text x="660" y="128" fill="#6ba3b0" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Shared Task Lists</text>
+          <text x="660" y="143" fill="#6ba3b0" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Inter-Agent Messaging</text>
 
           <!-- Plugins -->
-          <rect x="750" y="65" width="80" height="100" rx="8" fill="#252530" stroke="#EAB308" stroke-opacity="0.3"/>
-          <text x="790" y="90" fill="white" font-size="12" text-anchor="middle" font-weight="600">Plugins</text>
-          <text x="790" y="108" fill="#888" font-size="9" text-anchor="middle">Bundles</text>
-          <text x="790" y="128" fill="#EAB308" font-size="9" text-anchor="middle">Share</text>
-          <text x="790" y="143" fill="#EAB308" font-size="9" text-anchor="middle">Extend</text>
+          <rect x="750" y="65" width="80" height="100" rx="0" fill="#1a1a1a" stroke="#c9a85b" stroke-opacity="0.3"/>
+          <text x="790" y="90" fill="#f5f4f0" font-size="12" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Plugins</text>
+          <text x="790" y="108" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Bundles</text>
+          <text x="790" y="128" fill="#c9a85b" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Share</text>
+          <text x="790" y="143" fill="#c9a85b" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Extend</text>
 
           <!-- Connection lines -->
-          <line x1="330" y1="200" x2="330" y2="180" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4"/>
-          <line x1="240" y1="345" x2="240" y2="380" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.5"/>
-          <line x1="330" y1="345" x2="450" y2="380" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.5"/>
-          <line x1="418" y1="345" x2="700" y2="380" stroke="#3B82F6" stroke-width="1" stroke-opacity="0.5"/>
+          <line x1="330" y1="200" x2="330" y2="180" stroke="#7b8fa8" stroke-width="2" stroke-dasharray="4"/>
+          <line x1="240" y1="345" x2="240" y2="380" stroke="#7b8fa8" stroke-width="1" stroke-opacity="0.5"/>
+          <line x1="330" y1="345" x2="450" y2="380" stroke="#7b8fa8" stroke-width="1" stroke-opacity="0.5"/>
+          <line x1="418" y1="345" x2="700" y2="380" stroke="#7b8fa8" stroke-width="1" stroke-opacity="0.5"/>
         </svg>
       </div>
     </div>
@@ -850,34 +789,55 @@ h4, .h4 {
     <div class="content">
       <p class="kicker">Foundation</p>
       <h2>Claude Models</h2>
-      <div class="grid-3 mt-lg">
-        <div class="card card--glow fragment fade-up">
+      <div class="grid-3 mt-md">
+        <div class="card card--featured fragment fade-up">
           <span class="badge">Flagship</span>
-          <h3 class="mt-md" style="color: var(--pres-purple);">Opus</h3>
-          <p class="text-sm muted">Maximum reasoning power. Best for complex tasks, research, and demanding workflows.</p>
+          <h3 class="mt-md" style="color: var(--accent);">Opus 4.6</h3>
+          <p class="text-xs muted">Maximum reasoning. Complex tasks, research, demanding workflows.</p>
+          <div style="margin-top: 6px; font-size: clamp(0.6rem, 0.85vw, 0.72rem); color: var(--text-muted);">
+            <div>200K context (1M beta) &middot; 128K output</div>
+            <div style="margin-top: 2px;">API: <span style="color: var(--accent-light);">$5/$25</span> per MTok</div>
+            <div style="margin-top: 2px; color: var(--text-muted);">ID: <code style="font-size: 0.8em;">claude-opus-4-6</code></div>
+          </div>
           <div class="mt-md">
             <div class="text-xs muted">Available in:</div>
-            <div class="text-sm">Pro, Max, Team, Enterprise</div>
+            <div class="text-xs">Pro, Max, Team, Enterprise, API</div>
           </div>
         </div>
         <div class="card fragment fade-up">
           <span class="badge badge--success">Everyday</span>
-          <h3 class="mt-md" style="color: var(--pres-green);">Sonnet</h3>
-          <p class="text-sm muted">Balanced performance. Great for most coding, writing, and analysis tasks.</p>
+          <h3 class="mt-md" style="color: var(--success);">Sonnet 4.6</h3>
+          <p class="text-xs muted">Near-Opus intelligence at Sonnet price. Best computer use model.</p>
+          <div style="margin-top: 6px; font-size: clamp(0.6rem, 0.85vw, 0.72rem); color: var(--text-muted);">
+            <div>200K context (1M beta) &middot; 64K output</div>
+            <div style="margin-top: 2px;">API: <span style="color: var(--accent-light);">$3/$15</span> per MTok</div>
+            <div style="margin-top: 2px; color: var(--text-muted);">ID: <code style="font-size: 0.8em;">claude-sonnet-4-6</code></div>
+          </div>
           <div class="mt-md">
             <div class="text-xs muted">Available in:</div>
-            <div class="text-sm">Free, Pro, Max, Team</div>
+            <div class="text-xs">Free, Pro, Max, Team, Enterprise, API</div>
           </div>
         </div>
         <div class="card fragment fade-up">
-          <span class="badge badge--warning">Fast & Cheap</span>
-          <h3 class="mt-md" style="color: var(--pres-yellow);">Haiku</h3>
-          <p class="text-sm muted">Speed optimized. Best for quick tasks, high volume, cost-sensitive use cases.</p>
+          <span class="badge badge--warning">Fast &amp; Cheap</span>
+          <h3 class="mt-md" style="color: var(--warning);">Haiku 4.5</h3>
+          <p class="text-xs muted">Speed optimized. Quick tasks, high volume, cost-sensitive use cases.</p>
+          <div style="margin-top: 6px; font-size: clamp(0.6rem, 0.85vw, 0.72rem); color: var(--text-muted);">
+            <div>200K context &middot; 64K output</div>
+            <div style="margin-top: 2px;">API: <span style="color: var(--accent-light);">$1/$5</span> per MTok</div>
+            <div style="margin-top: 2px; color: var(--text-muted);">ID: <code style="font-size: 0.8em;">claude-haiku-4-5</code></div>
+          </div>
           <div class="mt-md">
             <div class="text-xs muted">Available in:</div>
-            <div class="text-sm">Chrome (Pro), API</div>
+            <div class="text-xs">All plans, Chrome (Pro=Haiku), API</div>
           </div>
         </div>
+      </div>
+      <div class="text-xs muted mt-sm" style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <span>Batch API: 50% discount</span>
+        <span>Prompt caching: up to 90% savings</span>
+        <span>Long context (&gt;200K): 2x input pricing</span>
+        <span>Fast mode (Opus): 6x price, 2.5x speed</span>
       </div>
     </div>
   </div>
@@ -895,23 +855,25 @@ h4, .h4 {
       <p class="lead">The starting point. claude.ai and mobile apps.</p>
       <div class="two-col mt-sm">
         <div class="card">
-          <h4 style="color: var(--pres-green);">What It Does</h4>
+          <h4 style="color: var(--success);">What It Does</h4>
           <ul class="list list--check">
             <li>Conversation with Opus/Sonnet</li>
             <li>Artifacts (interactive previews)</li>
-            <li>File uploads (PDFs, images)</li>
-            <li>Projects (saved context)</li>
+            <li>Projects (saved context) &amp; Memory</li>
+            <li>50+ Connectors (Slack, Gmail, Notion, GitHub...)</li>
+            <li>File creation (Excel, PPT, Word, PDF)</li>
+            <li>Web search &amp; Styles (custom tone)</li>
             <li>Web, iOS, Android, Desktop app</li>
           </ul>
         </div>
         <div class="card">
-          <h4 style="color: var(--pres-red);">What It Doesn't</h4>
+          <h4 style="color: var(--error);">What It Doesn't</h4>
           <ul class="list list--cross">
             <li>See your local files</li>
             <li>Run code on your machine</li>
-            <li>Browse web / Execute commands</li>
-            <li>Voice mode (like ChatGPT)</li>
-            <li>Generate images</li>
+            <li>Execute terminal commands</li>
+            <li>Real-time voice (like ChatGPT)</li>
+            <li>Generate images natively</li>
           </ul>
         </div>
       </div>
@@ -925,6 +887,11 @@ h4, .h4 {
           <div class="pricing__name">Pro</div>
           <div class="pricing__price">$20</div>
           <div class="pricing__period">Opus access</div>
+        </div>
+        <div class="pricing__card">
+          <div class="pricing__name">Max</div>
+          <div class="pricing__price">$100-200</div>
+          <div class="pricing__period">5x or 20x usage</div>
         </div>
         <div class="pricing__card">
           <div class="pricing__name">Team</div>
@@ -950,27 +917,30 @@ h4, .h4 {
     <div class="content">
       <p class="kicker">Level 2</p>
       <h2>Claude Code Desktop</h2>
-      <p class="lead">The friendly face. Visual interface, same power.</p>
+      <p class="lead">The friendly face. Visual interface, full power.</p>
       <div class="two-col mt-sm">
         <div class="card">
-          <h4 style="color: var(--pres-green);">What It Does</h4>
+          <h4 style="color: var(--success);">What It Does</h4>
           <ul class="list list--check">
-            <li>Read & edit files in folder</li>
+            <li>Read &amp; edit files in folder</li>
             <li>Run terminal commands</li>
-            <li>Multi-file edits & Git</li>
-            <li>MCP connections</li>
-            <li>Visual diff view</li>
-            <li>Multiple sessions (worktrees)</li>
+            <li>Multi-file edits &amp; Git</li>
+            <li>MCP connections, Hooks &amp; Skills</li>
+            <li>VS Code extension (2M+ installs)</li>
+            <li>JetBrains plugin (beta)</li>
+            <li>Visual diff view &amp; worktrees</li>
           </ul>
         </div>
         <div class="card">
-          <h4 style="color: var(--pres-red);">What It Doesn't</h4>
+          <h4 style="color: var(--error);">What It Doesn't</h4>
           <ul class="list list--cross">
-            <li>Browser automation</li>
-            <li>Custom hooks / Skills</li>
+            <li>SSH / Remote server access</li>
+            <li>--chrome flag (CLI only)</li>
             <li>Run where apps can't install</li>
           </ul>
-          <p class="text-sm mt-sm" style="padding: 8px; background: var(--pres-bg-primary); border-radius: 6px;"><strong>Best for:</strong> Most people who want coding power without terminal.</p>
+          <p class="text-sm mt-sm" style="padding: 8px; border: 1px solid var(--border);">
+            <strong>Best for:</strong> Most people who want coding power without terminal.
+          </p>
         </div>
       </div>
       <div style="margin-top: clamp(8px, 1vh, 16px); display: flex; gap: 12px; flex-wrap: wrap;">
@@ -991,24 +961,27 @@ h4, .h4 {
     <div class="content">
       <p class="kicker">Level 3</p>
       <h2>Claude Code Web</h2>
-      <p class="lead">claude.ai/code - Start anywhere, teleport home.</p>
+      <p class="lead">claude.ai/code — Start anywhere, teleport home.</p>
       <div class="two-col mt-sm">
         <div class="card">
-          <h4 style="color: var(--pres-green);">What It Does</h4>
+          <h4 style="color: var(--success);">What It Does</h4>
           <ul class="list list--check">
             <li>Works on ANY computer</li>
             <li>No installation required</li>
             <li>GitHub integration built-in</li>
             <li>Sandbox environment</li>
-            <li><strong>/teleport</strong> - transfer to local</li>
+            <li><strong>/teleport</strong> — transfer to local</li>
+            <li>Remote MCP connectors</li>
           </ul>
-          <p class="text-sm mt-sm" style="padding: 8px; background: var(--pres-bg-primary); border-radius: 6px;"><strong>Killer:</strong> Start coding on iPad, /teleport home.</p>
+          <p class="text-sm mt-sm" style="padding: 8px; border: 1px solid var(--border);">
+            <strong>Killer:</strong> Start coding on iPad, /teleport home.
+          </p>
         </div>
         <div class="card">
-          <h4 style="color: var(--pres-red);">What It Doesn't</h4>
+          <h4 style="color: var(--error);">What It Doesn't</h4>
           <ul class="list list--cross">
             <li>Work with local folders</li>
-            <li>MCP / Hooks / Skills</li>
+            <li>Local MCP / Hooks / Skills</li>
             <li>Non-GitHub projects</li>
             <li>Work offline</li>
           </ul>
@@ -1057,9 +1030,9 @@ h4, .h4 {
           <p class="text-xs muted">Specialized modes</p>
         </div>
         <div class="card">
-          <div class="card__icon" style="color: var(--pres-pink);"><i data-lucide="users"></i></div>
-          <h4>Sub-Agents</h4>
-          <p class="text-xs muted">Parallel workers</p>
+          <div class="card__icon" style="color: #a87b9b;"><i data-lucide="users"></i></div>
+          <h4>Agent Teams</h4>
+          <p class="text-xs muted">Coordinated parallel work</p>
         </div>
         <div class="card">
           <div class="card__icon card__icon--cyan"><i data-lucide="chrome"></i></div>
@@ -1068,13 +1041,13 @@ h4, .h4 {
         </div>
         <div class="card">
           <div class="card__icon card__icon--green"><i data-lucide="server"></i></div>
-          <h4>SSH & Remote</h4>
-          <p class="text-xs muted">Servers, Replit</p>
+          <h4>SSH, Remote &amp; Slack</h4>
+          <p class="text-xs muted">Servers, @Claude in Slack</p>
         </div>
         <div class="card">
           <div class="card__icon card__icon--orange"><i data-lucide="package"></i></div>
           <h4>Plugins</h4>
-          <p class="text-xs muted">Share & extend</p>
+          <p class="text-xs muted">Share &amp; extend</p>
         </div>
       </div>
       <div style="margin-top: clamp(8px, 1vh, 14px); display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
@@ -1100,51 +1073,110 @@ h4, .h4 {
       <div class="diagram mt-sm" style="flex: 1; max-height: calc(100vh - 220px);">
         <svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
           <!-- Claude Code Center -->
-          <rect x="350" y="100" width="200" height="120" rx="12" fill="#16161f" stroke="url(#purpleGrad)" stroke-width="3"/>
-          <text x="450" y="150" fill="white" font-size="18" text-anchor="middle" font-weight="700">Claude Code</text>
-          <text x="450" y="175" fill="#60A5FA" font-size="12" text-anchor="middle">Terminal</text>
-          <text x="450" y="195" fill="#888" font-size="11" text-anchor="middle">MCP Client</text>
+          <rect x="350" y="100" width="200" height="120" rx="0" fill="#111111" stroke="url(#accentGrad)" stroke-width="2"/>
+          <text x="450" y="150" fill="#f5f4f0" font-size="18" text-anchor="middle" font-weight="500" font-family="Playfair Display, serif">Claude Code</text>
+          <text x="450" y="175" fill="#9bb0c9" font-size="12" text-anchor="middle" font-family="Inter, sans-serif">Terminal + Desktop</text>
+          <text x="450" y="195" fill="#666" font-size="11" text-anchor="middle" font-family="Inter, sans-serif">MCP Client</text>
 
           <!-- Connectors -->
-          <!-- Left side -->
-          <line x1="350" y1="140" x2="220" y2="60" stroke="#3B82F6" stroke-width="2"/>
-          <line x1="350" y1="160" x2="180" y2="160" stroke="#3B82F6" stroke-width="2"/>
-          <line x1="350" y1="180" x2="220" y2="260" stroke="#3B82F6" stroke-width="2"/>
-
-          <!-- Right side -->
-          <line x1="550" y1="140" x2="680" y2="60" stroke="#3B82F6" stroke-width="2"/>
-          <line x1="550" y1="160" x2="720" y2="160" stroke="#3B82F6" stroke-width="2"/>
-          <line x1="550" y1="180" x2="680" y2="260" stroke="#3B82F6" stroke-width="2"/>
+          <line x1="350" y1="140" x2="220" y2="60" stroke="#7b8fa8" stroke-width="1.5"/>
+          <line x1="350" y1="160" x2="180" y2="160" stroke="#7b8fa8" stroke-width="1.5"/>
+          <line x1="350" y1="180" x2="220" y2="260" stroke="#7b8fa8" stroke-width="1.5"/>
+          <line x1="550" y1="140" x2="680" y2="60" stroke="#7b8fa8" stroke-width="1.5"/>
+          <line x1="550" y1="160" x2="720" y2="160" stroke="#7b8fa8" stroke-width="1.5"/>
+          <line x1="550" y1="180" x2="680" y2="260" stroke="#7b8fa8" stroke-width="1.5"/>
 
           <!-- MCP Servers - Left -->
-          <rect x="60" y="30" width="160" height="55" rx="8" fill="#1c1c28" stroke="#22C55E" stroke-opacity="0.5"/>
-          <text x="140" y="55" fill="white" font-size="13" text-anchor="middle" font-weight="600">Notion</text>
-          <text x="140" y="72" fill="#888" font-size="10" text-anchor="middle">Tasks, Projects, Docs</text>
+          <rect x="60" y="30" width="160" height="55" rx="0" fill="#141414" stroke="#7b9a7b" stroke-opacity="0.5"/>
+          <text x="140" y="55" fill="#f5f4f0" font-size="13" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Notion</text>
+          <text x="140" y="72" fill="#666" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Tasks, Projects, Docs</text>
 
-          <rect x="20" y="130" width="160" height="55" rx="8" fill="#1c1c28" stroke="#22D3EE" stroke-opacity="0.5"/>
-          <text x="100" y="155" fill="white" font-size="13" text-anchor="middle" font-weight="600">Google Workspace</text>
-          <text x="100" y="172" fill="#888" font-size="10" text-anchor="middle">Calendar, Gmail, Docs</text>
+          <rect x="20" y="130" width="160" height="55" rx="0" fill="#141414" stroke="#6ba3b0" stroke-opacity="0.5"/>
+          <text x="100" y="155" fill="#f5f4f0" font-size="13" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Google Workspace</text>
+          <text x="100" y="172" fill="#666" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Calendar, Gmail, Docs</text>
 
-          <rect x="60" y="230" width="160" height="55" rx="8" fill="#1c1c28" stroke="#F97316" stroke-opacity="0.5"/>
-          <text x="140" y="255" fill="white" font-size="13" text-anchor="middle" font-weight="600">Databases</text>
-          <text x="140" y="272" fill="#888" font-size="10" text-anchor="middle">SQL, Postgres, etc.</text>
+          <rect x="60" y="230" width="160" height="55" rx="0" fill="#141414" stroke="#c9a85b" stroke-opacity="0.5"/>
+          <text x="140" y="255" fill="#f5f4f0" font-size="13" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Databases</text>
+          <text x="140" y="272" fill="#666" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">SQL, Postgres, etc.</text>
 
           <!-- MCP Servers - Right -->
-          <rect x="680" y="30" width="160" height="55" rx="8" fill="#1c1c28" stroke="#EC4899" stroke-opacity="0.5"/>
-          <text x="760" y="55" fill="white" font-size="13" text-anchor="middle" font-weight="600">Browser</text>
-          <text x="760" y="72" fill="#888" font-size="10" text-anchor="middle">Chrome Extension</text>
+          <rect x="680" y="30" width="160" height="55" rx="0" fill="#141414" stroke="#a87b9b" stroke-opacity="0.5"/>
+          <text x="760" y="55" fill="#f5f4f0" font-size="13" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Browser</text>
+          <text x="760" y="72" fill="#666" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Chrome Extension</text>
 
-          <rect x="720" y="130" width="160" height="55" rx="8" fill="#1c1c28" stroke="#EAB308" stroke-opacity="0.5"/>
-          <text x="800" y="155" fill="white" font-size="13" text-anchor="middle" font-weight="600">Custom APIs</text>
-          <text x="800" y="172" fill="#888" font-size="10" text-anchor="middle">Your services</text>
+          <rect x="720" y="130" width="160" height="55" rx="0" fill="#141414" stroke="#c9a85b" stroke-opacity="0.5"/>
+          <text x="800" y="155" fill="#f5f4f0" font-size="13" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Custom APIs</text>
+          <text x="800" y="172" fill="#666" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Your services</text>
 
-          <rect x="680" y="230" width="160" height="55" rx="8" fill="#1c1c28" stroke="#60A5FA" stroke-opacity="0.5"/>
-          <text x="760" y="255" fill="white" font-size="13" text-anchor="middle" font-weight="600">GitHub</text>
-          <text x="760" y="272" fill="#888" font-size="10" text-anchor="middle">Repos, Issues, PRs</text>
+          <rect x="680" y="230" width="160" height="55" rx="0" fill="#141414" stroke="#7b8fa8" stroke-opacity="0.5"/>
+          <text x="760" y="255" fill="#f5f4f0" font-size="13" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">GitHub</text>
+          <text x="760" y="272" fill="#666" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Repos, Issues, PRs</text>
         </svg>
       </div>
-      <div class="text-center mt-md">
-        <p class="text-sm muted">"What's on my plate today?" → Checks Notion + Calendar → Unified view</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: clamp(4px, 0.5vh, 8px);">
+        <span class="text-xs" style="color: var(--accent);">13,000+ public servers</span>
+        <span class="text-xs" style="color: var(--success);">Adopted by OpenAI, Google, Microsoft</span>
+        <span class="text-xs" style="color: var(--warning);">Donated to Linux Foundation (Agentic AI Foundation)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 9B: CONNECTORS -->
+<section>
+  <div class="slide">
+    <div class="header">
+      <div class="header__logo">Claude Ecosystem Guide</div>
+    </div>
+    <div class="content">
+      <p class="kicker">Infrastructure</p>
+      <h2>Connectors</h2>
+      <p class="lead">50+ curated MCP integrations built into Claude.ai. No setup required.</p>
+      <div class="grid-4 mt-sm" style="grid-template-rows: auto auto auto;">
+        <div class="card">
+          <div class="card__icon card__icon--green"><i data-lucide="message-square"></i></div>
+          <h4>Communication</h4>
+          <p class="text-xs muted">Slack, Gmail, Microsoft 365</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--cyan"><i data-lucide="layout-dashboard"></i></div>
+          <h4>Project Mgmt</h4>
+          <p class="text-xs muted">Asana, Linear, Jira, Monday</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--orange"><i data-lucide="palette"></i></div>
+          <h4>Design</h4>
+          <p class="text-xs muted">Canva, Figma</p>
+        </div>
+        <div class="card">
+          <div class="card__icon"><i data-lucide="git-branch"></i></div>
+          <h4>Engineering</h4>
+          <p class="text-xs muted">GitHub, Sentry, GitLab</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--green"><i data-lucide="file-text"></i></div>
+          <h4>Knowledge</h4>
+          <p class="text-xs muted">Notion, Google Drive, Box</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--orange"><i data-lucide="credit-card"></i></div>
+          <h4>Finance</h4>
+          <p class="text-xs muted">Stripe, Square, PayPal</p>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--cyan"><i data-lucide="bar-chart-3"></i></div>
+          <h4>Analytics</h4>
+          <p class="text-xs muted">Hex, Amplitude</p>
+        </div>
+        <div class="card">
+          <div class="card__icon" style="color: #a87b9b;"><i data-lucide="zap"></i></div>
+          <h4>Automation</h4>
+          <p class="text-xs muted">Zapier (8,000+ apps)</p>
+        </div>
+      </div>
+      <div style="margin-top: clamp(6px, 1vh, 12px); display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+        <span class="badge badge--success">Available on Free plan (since Feb 11)</span>
+        <span class="text-xs muted">No API keys needed. One-click OAuth connect in claude.ai.</span>
       </div>
     </div>
   </div>
@@ -1161,8 +1193,8 @@ h4, .h4 {
         <p class="kicker">Infrastructure</p>
         <h2>Hooks</h2>
         <p class="lead">Scripts that run before or after Claude actions.</p>
-        <div class="card card--glow mt-md">
-          <code style="color: var(--pres-purple); font-size: clamp(11px, 1vw, 14px);">
+        <div class="card card--featured mt-md">
+          <code style="color: var(--accent-light); font-size: clamp(11px, 1vw, 14px);">
             Pre-hook → Claude Action → Post-hook
           </code>
         </div>
@@ -1184,7 +1216,7 @@ h4, .h4 {
           <p class="text-xs muted">Sync learnings to knowledge base</p>
         </div>
         <div class="card">
-          <div class="card__icon" style="color: var(--pres-pink);"><i data-lucide="bell"></i></div>
+          <div class="card__icon" style="color: #a87b9b;"><i data-lucide="bell"></i></div>
           <h4>Notifications</h4>
           <p class="text-xs muted">Alert when long tasks complete</p>
         </div>
@@ -1204,8 +1236,8 @@ h4, .h4 {
         <p class="kicker">Infrastructure</p>
         <h2>Skills</h2>
         <p class="lead">Specialized modes that activate automatically when context matches.</p>
-        <div class="card card--glow mt-md">
-          <code style="color: var(--pres-purple); font-size: clamp(11px, 1vw, 14px);">
+        <div class="card card--featured mt-md">
+          <code style="color: var(--accent-light); font-size: clamp(11px, 1vw, 14px);">
             "Package this video" → Skill loads → Knows exactly what to do
           </code>
         </div>
@@ -1228,7 +1260,7 @@ h4, .h4 {
           <p class="text-xs muted">Generate title and thumbnail options</p>
         </div>
         <div class="card">
-          <span class="badge" style="background: rgba(236, 72, 153, 0.15); color: #EC4899; border-color: rgba(236, 72, 153, 0.3);">Slides</span>
+          <span class="badge" style="color: #a87b9b; border-color: #a87b9b;">Slides</span>
           <h4 style="margin-top: 4px;">Presentations</h4>
           <p class="text-xs muted">Build slides from outlines</p>
         </div>
@@ -1237,7 +1269,7 @@ h4, .h4 {
   </div>
 </section>
 
-<!-- SLIDE 12: SUB-AGENTS -->
+<!-- SLIDE 12: AGENT TEAMS -->
 <section>
   <div class="slide">
     <div class="header">
@@ -1245,39 +1277,107 @@ h4, .h4 {
     </div>
     <div class="content">
       <p class="kicker">Infrastructure</p>
-      <h2>Sub-Agents</h2>
-      <p class="lead">Claude spawning other Claudes for parallel work.</p>
-      <div class="diagram mt-sm" style="flex: 1; max-height: calc(100vh - 220px);">
-        <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
-          <!-- Main Claude -->
-          <rect x="350" y="20" width="200" height="80" rx="12" fill="#16161f" stroke="url(#purpleGrad)" stroke-width="3"/>
-          <text x="450" y="55" fill="white" font-size="16" text-anchor="middle" font-weight="700">Main Claude</text>
-          <text x="450" y="78" fill="#888" font-size="11" text-anchor="middle">/agents shows running</text>
+      <h2>Agent Teams <span class="badge" style="vertical-align: middle; font-size: 0.4em;">Experimental</span></h2>
+      <p class="lead">Lead agent orchestrating teammates with shared task lists and messaging.</p>
+      <div class="diagram mt-sm" style="flex: 1; max-height: calc(100vh - 240px);">
+        <svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
+          <!-- Lead Agent -->
+          <rect x="300" y="15" width="300" height="75" rx="0" fill="#111111" stroke="url(#accentGrad)" stroke-width="2"/>
+          <text x="450" y="45" fill="#f5f4f0" font-size="16" text-anchor="middle" font-weight="500" font-family="Playfair Display, serif">Lead Agent</text>
+          <text x="450" y="68" fill="#666" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Creates tasks, assigns work, coordinates</text>
+
+          <!-- Shared Task List -->
+          <rect x="340" y="105" width="220" height="40" rx="0" fill="#1a1a1a" stroke="#7b8fa8" stroke-opacity="0.6"/>
+          <text x="450" y="130" fill="#9bb0c9" font-size="11" text-anchor="middle" font-family="Inter, sans-serif">Shared Task List (pending → in_progress → done)</text>
 
           <!-- Arrows down -->
-          <line x1="350" y1="100" x2="150" y2="160" stroke="#3B82F6" stroke-width="2"/>
-          <line x1="450" y1="100" x2="450" y2="160" stroke="#3B82F6" stroke-width="2"/>
-          <line x1="550" y1="100" x2="750" y2="160" stroke="#3B82F6" stroke-width="2"/>
+          <line x1="370" y1="145" x2="150" y2="185" stroke="#7b8fa8" stroke-width="1.5"/>
+          <line x1="450" y1="145" x2="450" y2="185" stroke="#7b8fa8" stroke-width="1.5"/>
+          <line x1="530" y1="145" x2="750" y2="185" stroke="#7b8fa8" stroke-width="1.5"/>
 
-          <!-- Sub-agents -->
-          <rect x="50" y="160" width="200" height="100" rx="10" fill="#1c1c28" stroke="#22D3EE" stroke-opacity="0.5"/>
-          <text x="150" y="195" fill="white" font-size="14" text-anchor="middle" font-weight="600">Research Agent</text>
-          <text x="150" y="215" fill="#22D3EE" font-size="11" text-anchor="middle">"Research this topic"</text>
-          <text x="150" y="235" fill="#888" font-size="10" text-anchor="middle">Web search, citations</text>
+          <!-- Bidirectional message arrows -->
+          <line x1="150" y1="185" x2="370" y2="145" stroke="#7b9a7b" stroke-width="1" stroke-dasharray="4"/>
+          <line x1="450" y1="185" x2="450" y2="145" stroke="#7b9a7b" stroke-width="1" stroke-dasharray="4"/>
+          <line x1="750" y1="185" x2="530" y2="145" stroke="#7b9a7b" stroke-width="1" stroke-dasharray="4"/>
 
-          <rect x="350" y="160" width="200" height="100" rx="10" fill="#1c1c28" stroke="#22C55E" stroke-opacity="0.5"/>
-          <text x="450" y="195" fill="white" font-size="14" text-anchor="middle" font-weight="600">Code Agent 1</text>
-          <text x="450" y="215" fill="#22C55E" font-size="11" text-anchor="middle">"Fix bug in auth"</text>
-          <text x="450" y="235" fill="#888" font-size="10" text-anchor="middle">File edits, testing</text>
+          <!-- Teammates -->
+          <rect x="50" y="185" width="200" height="100" rx="0" fill="#141414" stroke="#6ba3b0" stroke-opacity="0.5"/>
+          <text x="150" y="215" fill="#f5f4f0" font-size="13" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Research Agent</text>
+          <text x="150" y="235" fill="#6ba3b0" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Web search, analysis</text>
+          <text x="150" y="255" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Own context window</text>
 
-          <rect x="650" y="160" width="200" height="100" rx="10" fill="#1c1c28" stroke="#F97316" stroke-opacity="0.5"/>
-          <text x="750" y="195" fill="white" font-size="14" text-anchor="middle" font-weight="600">Code Agent 2</text>
-          <text x="750" y="215" fill="#F97316" font-size="11" text-anchor="middle">"Fix bug in API"</text>
-          <text x="750" y="235" fill="#888" font-size="10" text-anchor="middle">Parallel work</text>
+          <rect x="350" y="185" width="200" height="100" rx="0" fill="#141414" stroke="#7b9a7b" stroke-opacity="0.5"/>
+          <text x="450" y="215" fill="#f5f4f0" font-size="13" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Code Agent</text>
+          <text x="450" y="235" fill="#7b9a7b" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">File edits, testing</text>
+          <text x="450" y="255" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">DMs &amp; broadcasts</text>
+
+          <rect x="650" y="185" width="200" height="100" rx="0" fill="#141414" stroke="#c9a85b" stroke-opacity="0.5"/>
+          <text x="750" y="215" fill="#f5f4f0" font-size="13" text-anchor="middle" font-weight="500" font-family="Inter, sans-serif">Review Agent</text>
+          <text x="750" y="235" fill="#c9a85b" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Code review, QA</text>
+          <text x="750" y="255" fill="#666" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Task dependencies</text>
         </svg>
       </div>
-      <div class="text-center mt-md">
-        <p class="text-sm">"Fix all these bugs" → Multiple agents spawn in parallel → Work simultaneously</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: clamp(4px, 0.5vh, 8px);">
+        <span class="text-xs" style="color: var(--accent);">Shared task lists</span>
+        <span class="text-xs" style="color: var(--success);">Inter-agent messaging</span>
+        <span class="text-xs" style="color: var(--warning);">Task dependencies</span>
+        <span class="text-xs" style="color: #6ba3b0;">Separate contexts</span>
+        <span class="text-xs" style="color: #a87b9b;">Graceful shutdown</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 12B: AGENT SDK -->
+<section>
+  <div class="slide">
+    <div class="header">
+      <div class="header__logo">Claude Ecosystem Guide</div>
+    </div>
+    <div class="split">
+      <div>
+        <p class="kicker">Infrastructure — For Developers</p>
+        <h2>Claude Agent SDK</h2>
+        <p class="lead">Build custom autonomous agents programmatically. Python &amp; TypeScript.</p>
+        <div class="card card--featured mt-md">
+          <h4>What It Does</h4>
+          <ul class="list list--check mt-sm">
+            <li>Full Claude Code capabilities via SDK</li>
+            <li>Custom tools via @tool decorator</li>
+            <li>Spawn subagents for parallel work</li>
+            <li>Hooks: PreToolUse, PostToolUse, Stop</li>
+            <li>Effort control (low → max thinking)</li>
+            <li>MCP tool annotations (readOnly, destructive...)</li>
+          </ul>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: clamp(6px, 1vh, 12px);">
+        <div class="card">
+          <span class="badge badge--success">Python</span>
+          <div style="background: var(--bg-dark); padding: 8px; border: 1px solid var(--border); margin-top: 6px;">
+            <code class="text-xs" style="color: var(--accent-light);">
+              pip install anthropic-agent-sdk<br/>
+              from claude_agent import Agent, tool
+            </code>
+          </div>
+        </div>
+        <div class="card">
+          <span class="badge">TypeScript</span>
+          <div style="background: var(--bg-dark); padding: 8px; border: 1px solid var(--border); margin-top: 6px;">
+            <code class="text-xs" style="color: var(--accent-light);">
+              npm install @anthropic-ai/claude-agent-sdk<br/>
+              import { Agent } from "claude-agent-sdk"
+            </code>
+          </div>
+        </div>
+        <div class="card">
+          <span class="badge badge--warning">IDE Integration</span>
+          <h4 style="margin-top: 4px;">Xcode 26.3</h4>
+          <p class="text-xs muted">Native Claude Agent SDK integration. Subagents, background tasks, and plugins directly in Xcode.</p>
+        </div>
+        <div class="card" style="background: var(--bg-card);">
+          <p class="text-xs"><strong>Not Claude Code.</strong> This is for building <em>your own</em> agents with Claude's capabilities.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1295,15 +1395,15 @@ h4, .h4 {
       <p class="lead">Shareable bundles of commands, agents, skills, hooks, and MCP configs.</p>
       <div class="two-col mt-sm">
         <div>
-          <div class="card card--glow mb-sm">
+          <div class="card card--featured mb-sm">
             <h4>What's Inside a Plugin?</h4>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px;">
-              <div class="text-xs"><span style="color: var(--pres-purple);">/commands</span> - Slash commands</div>
-              <div class="text-xs"><span style="color: var(--pres-cyan);">/agents</span> - Specialized agents</div>
-              <div class="text-xs"><span style="color: var(--pres-pink);">/skills</span> - Knowledge modules</div>
-              <div class="text-xs"><span style="color: var(--pres-green);">/hooks</span> - Event handlers</div>
-              <div class="text-xs"><span style="color: var(--pres-orange);">.mcp.json</span> - Tool configs</div>
-              <div class="text-xs"><span style="color: var(--pres-yellow);">plugin.json</span> - Metadata</div>
+              <div class="text-xs"><span style="color: var(--accent);">/commands</span> — Slash commands</div>
+              <div class="text-xs"><span style="color: #6ba3b0;">/agents</span> — Specialized agents</div>
+              <div class="text-xs"><span style="color: #a87b9b;">/skills</span> — Knowledge modules</div>
+              <div class="text-xs"><span style="color: var(--success);">/hooks</span> — Event handlers</div>
+              <div class="text-xs"><span style="color: var(--warning);">.mcp.json</span> — Tool configs</div>
+              <div class="text-xs"><span style="color: var(--accent-light);">plugin.json</span> — Metadata</div>
             </div>
           </div>
           <div class="card">
@@ -1316,7 +1416,7 @@ h4, .h4 {
           </div>
         </div>
         <div style="display: flex; flex-direction: column; gap: clamp(6px, 1vh, 10px);">
-          <p class="text-xs muted">14 Official Plugins Available:</p>
+          <p class="text-xs muted">14 Official Plugins:</p>
           <div class="card">
             <span class="badge badge--success">Popular</span>
             <h4 style="margin-top: 4px;">code-review</h4>
@@ -1341,7 +1441,7 @@ h4, .h4 {
       </div>
       <div style="margin-top: clamp(8px, 1vh, 12px);">
         <span class="badge">github.com/anthropics/claude-code/plugins</span>
-        <span class="text-xs muted" style="margin-left: 8px;">Create your own, share with team</span>
+        <span class="text-xs muted" style="margin-left: 8px;">+ claude-plugins-official directory</span>
       </div>
     </div>
   </div>
@@ -1359,35 +1459,35 @@ h4, .h4 {
       <p class="lead">Your companion. Not your workstation.</p>
       <div class="two-col mt-sm">
         <div class="card">
-          <h4 style="color: var(--pres-green);">What It Does</h4>
+          <h4 style="color: var(--success);">What It Does</h4>
           <ul class="list list--check">
             <li>Full chat with Opus/Sonnet</li>
-            <li>Artifacts (view & interact)</li>
-            <li>Voice-to-text input</li>
-            <li>Health data (iOS) / Camera</li>
-            <li>Project sync with desktop</li>
+            <li>Claude Code (iOS native, since Oct 2025)</li>
+            <li>Voice input &amp; read-aloud</li>
+            <li>File creation &amp; editing (paid)</li>
+            <li>Health data (iOS &amp; Android)</li>
+            <li>Project sync across devices</li>
           </ul>
         </div>
         <div class="card">
-          <h4 style="color: var(--pres-red);">What It Doesn't</h4>
+          <h4 style="color: var(--error);">What It Doesn't</h4>
           <ul class="list list--cross">
-            <li>Claude Code agent</li>
-            <li>Real-time voice (like ChatGPT)</li>
+            <li>Real-time voice conversation (like ChatGPT)</li>
             <li>Generate images</li>
             <li>MCP, hooks, skills</li>
           </ul>
         </div>
       </div>
-      <div class="card mt-sm" style="background: var(--pres-bg-secondary);">
+      <div class="card mt-sm" style="background: var(--bg-card);">
         <div class="two-col" style="gap: 16px;">
           <div>
             <h4 style="margin-bottom: 4px;">Voice Comparison</h4>
-            <p class="text-xs muted"><strong>ChatGPT:</strong> Real-time. Speak ↔ Speak.</p>
-            <p class="text-xs muted"><strong>Claude:</strong> Voice-to-text. Speak → Text.</p>
+            <p class="text-xs muted"><strong>ChatGPT:</strong> Real-time streaming. Speak ↔ Speak.</p>
+            <p class="text-xs muted"><strong>Claude:</strong> Voice-to-text input + read-aloud output.</p>
           </div>
           <div>
-            <h4 style="margin-bottom: 4px;">Workaround</h4>
-            <p class="text-xs muted">Use phone browser for claude.ai/code to monitor sessions.</p>
+            <h4 style="margin-bottom: 4px;">Claude Code on iOS</h4>
+            <p class="text-xs muted">Native agentic coding in the iOS app since Oct 2025. Start tasks on phone, monitor on desktop.</p>
           </div>
         </div>
       </div>
@@ -1399,7 +1499,7 @@ h4, .h4 {
   </div>
 </section>
 
-<!-- SLIDE 14: CLAUDE IN CHROME -->
+<!-- SLIDE 15: CLAUDE IN CHROME -->
 <section>
   <div class="slide">
     <div class="header">
@@ -1411,33 +1511,33 @@ h4, .h4 {
       <p class="lead">Browser automation for everyone. Side panel assistant.</p>
       <div class="two-col mt-sm">
         <div class="card">
-          <h4 style="color: var(--pres-green);">What It Does</h4>
+          <h4 style="color: var(--success);">What It Does</h4>
           <ul class="list list--check">
             <li>Side panel AI in browser</li>
-            <li>Fill forms / Navigate & click</li>
+            <li>Fill forms / Navigate &amp; click</li>
             <li>Extract data (tables → sheets)</li>
             <li>Scheduled tasks / Record workflows</li>
             <li>Gmail, Calendar, Docs, Slack</li>
           </ul>
         </div>
         <div class="card">
-          <h4 style="color: var(--pres-red);">What It Doesn't</h4>
+          <h4 style="color: var(--error);">What It Doesn't</h4>
           <ul class="list list--cross">
             <li>Firefox, Safari, Mobile</li>
             <li>Banking/financial sites</li>
             <li>Bypass CAPTCHAs</li>
           </ul>
-          <p class="text-xs mt-sm" style="padding: 6px; background: rgba(239,68,68,0.1); border-radius: 4px; border: 1px solid rgba(239,68,68,0.3);"><strong>Pro = Haiku only.</strong> Max gets Opus/Sonnet.</p>
+          <p class="text-xs mt-sm" style="padding: 6px; border: 1px solid var(--error);"><strong>Pro = Haiku only.</strong> Max gets Opus/Sonnet.</p>
         </div>
       </div>
-      <div class="card mt-sm" style="background: var(--pres-bg-secondary);">
+      <div class="card mt-sm" style="background: var(--bg-card);">
         <p class="text-xs"><strong>Real Use:</strong> "Schedule meeting with John" → Opens calendar → Finds slots → Drafts email → Waits approval</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 15: CHROME VS --CHROME -->
+<!-- SLIDE 16: CHROME VS --CHROME -->
 <section>
   <div class="slide">
     <div class="header">
@@ -1448,8 +1548,8 @@ h4, .h4 {
       <h2>Chrome Extension vs --chrome Flag</h2>
       <p class="lead">Two ways to automate browsers. Different purposes.</p>
       <div class="two-col mt-lg">
-        <div class="card card--glow">
-          <span class="badge" style="background: rgba(34, 211, 238, 0.15); color: #22D3EE; border-color: rgba(34, 211, 238, 0.3);">Claude in Chrome</span>
+        <div class="card card--featured">
+          <span class="badge" style="color: #6ba3b0; border-color: #6ba3b0;">Claude in Chrome</span>
           <h3 class="mt-md">Browser Extension</h3>
           <ul class="list mt-md">
             <li>Everyday browser tasks</li>
@@ -1484,31 +1584,85 @@ h4, .h4 {
   </div>
 </section>
 
-<!-- SLIDE 16: COWORK WITH WARNING -->
+<!-- SLIDE 16B: COMPUTER USE -->
+<section>
+  <div class="slide">
+    <div class="header">
+      <div class="header__logo">Claude Ecosystem Guide</div>
+    </div>
+    <div class="split">
+      <div>
+        <p class="kicker">API Feature</p>
+        <h2>Computer Use</h2>
+        <p class="lead">Claude sees your screen and controls mouse/keyboard. GA on the API.</p>
+        <div class="card card--featured mt-md">
+          <h4>How It Works</h4>
+          <ul class="list mt-sm">
+            <li>Claude receives screenshots</li>
+            <li>Returns mouse clicks, keyboard input, scrolls</li>
+            <li>No special connectors needed — any software</li>
+            <li>Combine with bash &amp; text editor tools</li>
+          </ul>
+        </div>
+        <div class="mt-md">
+          <span class="badge badge--success">Sonnet 4.6 = Best computer use model</span>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: clamp(6px, 1vh, 12px);">
+        <div class="card">
+          <div class="card__icon card__icon--green"><i data-lucide="monitor"></i></div>
+          <h4>Use Cases</h4>
+          <ul class="list list--check">
+            <li>Browser automation across any tool</li>
+            <li>Form filling &amp; data entry</li>
+            <li>Dashboard navigation &amp; extraction</li>
+            <li>Multi-step web workflows</li>
+            <li>QA testing</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card__icon card__icon--orange"><i data-lucide="code"></i></div>
+          <h4>API Details</h4>
+          <p class="text-xs muted">Tool: <code>computer_20250124</code></p>
+          <p class="text-xs muted">Works on all Claude 4.x models</p>
+          <p class="text-xs muted">Standard tool use + vision pricing</p>
+        </div>
+        <div class="card" style="background: var(--bg-card);">
+          <p class="text-xs"><strong>Different from Chrome Extension.</strong> Computer Use is an API-level capability for developers building autonomous agents. Chrome Extension is a user-facing product.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 17: COWORK WITH WARNING -->
 <section>
   <div class="slide slide--warning">
     <div class="header">
       <div class="header__logo">Claude Ecosystem Guide</div>
     </div>
     <div class="content">
-      <p class="kicker kicker--warning">Level 7 - With Caution</p>
+      <p class="kicker kicker--warning">Level 7 — With Caution</p>
       <h2>Claude Cowork</h2>
       <p class="lead">File automation for non-developers. Desktop app, separate tab.</p>
       <div class="two-col mt-sm">
         <div style="display: flex; flex-direction: column; gap: clamp(6px, 1vh, 12px);">
           <div class="card">
-            <h4 style="color: var(--pres-green);">What It Does</h4>
+            <h4 style="color: var(--success);">What It Does</h4>
             <ul class="list list--check">
               <li>Access local files</li>
               <li>Spreadsheet / Document analysis</li>
               <li>Report generation</li>
+              <li>Plugins (dept workflows, launched Jan 30)</li>
+              <li>Runs code in sandboxed VM</li>
+              <li>Mac and Windows</li>
             </ul>
           </div>
           <div class="card">
-            <h4 style="color: var(--pres-red);">What It Doesn't</h4>
+            <h4 style="color: var(--error);">What It Doesn't</h4>
             <ul class="list list--cross">
-              <li>Windows/Linux (Mac only)</li>
-              <li>Run code / MCP connections</li>
+              <li>Linux support</li>
+              <li>MCP connections</li>
             </ul>
           </div>
         </div>
@@ -1519,10 +1673,10 @@ h4, .h4 {
             <p class="text-xs muted">Disclosed BEFORE launch. Anthropic launched anyway.</p>
             <ul class="list" style="font-size: clamp(10px, 0.9vw, 12px); margin-top: 6px;">
               <li>Hidden prompt injection in files</li>
-              <li>Files exfiltrated via API</li>
-              <li>Even Opus 4.5 falls for it</li>
+              <li>Files exfiltrated via whitelisted API</li>
+              <li>Even Opus 4.6 falls for it</li>
             </ul>
-            <div style="border-top: 1px solid rgba(239,68,68,0.3); padding-top: 6px; margin-top: 6px;">
+            <div style="border-top: 1px solid rgba(201,123,123,0.3); padding-top: 6px; margin-top: 6px;">
               <p class="text-xs"><strong>Recommendation:</strong> Don't give sensitive files. Wait for fix.</p>
             </div>
           </div>
@@ -1536,7 +1690,7 @@ h4, .h4 {
   </div>
 </section>
 
-<!-- SLIDE 17: PROMPT GENERATOR -->
+<!-- SLIDE 18: PROMPT GENERATOR -->
 <section>
   <div class="slide">
     <div class="header">
@@ -1544,10 +1698,10 @@ h4, .h4 {
     </div>
     <div class="split">
       <div>
-        <p class="kicker kicker--success">Bonus - 99% Don't Know</p>
+        <p class="kicker kicker--success">Bonus — 99% Don't Know</p>
         <h2>Prompt Generator</h2>
-        <p class="lead">console.anthropic.com - Completely FREE.</p>
-        <div class="card card--glow mt-lg">
+        <p class="lead">console.anthropic.com — Completely FREE.</p>
+        <div class="card card--featured mt-lg">
           <h4>What It Does</h4>
           <p class="text-sm muted mt-sm">Describe what you want → Get production-grade prompt</p>
           <ul class="list list--check mt-md">
@@ -1562,14 +1716,14 @@ h4, .h4 {
       <div>
         <div class="card mb-md">
           <h4>Your Request</h4>
-          <div style="background: var(--pres-bg-primary); padding: 12px; border-radius: 8px; margin-top: 8px;">
-            <code class="text-sm" style="color: var(--pres-text-muted);">"Analyze customer feedback and categorize it"</code>
+          <div style="background: var(--bg-dark); padding: 12px; border: 1px solid var(--border); margin-top: 8px;">
+            <code class="text-sm" style="color: var(--text-muted);">"Analyze customer feedback and categorize it"</code>
           </div>
         </div>
         <div class="card">
-          <h4 style="color: var(--pres-green);">Generated Prompt</h4>
-          <div style="background: var(--pres-bg-primary); padding: 12px; border-radius: 8px; margin-top: 8px;">
-            <code class="text-xs" style="color: var(--pres-purple-light);">
+          <h4 style="color: var(--success);">Generated Prompt</h4>
+          <div style="background: var(--bg-dark); padding: 12px; border: 1px solid var(--border); margin-top: 8px;">
+            <code class="text-xs" style="color: var(--accent-light);">
               You are a customer feedback analyst...<br/>
               Step 1: Read the feedback...<br/>
               Categories: Bug, Feature Request...<br/>
@@ -1578,8 +1732,8 @@ h4, .h4 {
             </code>
           </div>
         </div>
-        <div class="card mt-md" style="background: var(--pres-bg-secondary);">
-          <p class="text-sm"><strong>$300/hr consultants</strong> do this. The tool is <strong style="color: var(--pres-green);">free</strong>.</p>
+        <div class="card mt-md" style="background: var(--bg-card);">
+          <p class="text-sm"><strong>$300/hr consultants</strong> do this. The tool is <strong style="color: var(--success);">free</strong>.</p>
           <p class="text-xs muted">Works with any AI: Claude, ChatGPT, Gemini</p>
         </div>
       </div>
@@ -1587,7 +1741,7 @@ h4, .h4 {
   </div>
 </section>
 
-<!-- SLIDE 18: COMPARISON TABLE -->
+<!-- SLIDE 19: COMPARISON TABLE -->
 <section>
   <div class="slide">
     <div class="header">
@@ -1608,33 +1762,33 @@ h4, .h4 {
         <tbody>
           <tr>
             <td><strong>Claude Chat</strong></td>
-            <td>Conversations, writing, brainstorming</td>
-            <td>Free - $20/mo</td>
-            <td>Can't execute, no files</td>
+            <td>Conversations, writing, 50+ connectors</td>
+            <td>Free — $200/mo</td>
+            <td>Can't execute, no local files</td>
           </tr>
           <tr>
             <td><strong>Code Desktop</strong></td>
-            <td>Visual coding, MCP basics</td>
+            <td>Visual coding, MCP, hooks, skills</td>
             <td>$20/mo+</td>
-            <td>No hooks, limited commands</td>
+            <td>No SSH/remote, no --chrome flag</td>
           </tr>
           <tr>
             <td><strong>Code Web</strong></td>
             <td>Remote work, quick tasks</td>
             <td>$20/mo+</td>
-            <td>GitHub only, no MCP</td>
+            <td>GitHub only, no local MCP</td>
           </tr>
           <tr>
             <td><strong>Code Terminal</strong></td>
-            <td>Full power, automation</td>
+            <td>Full power, agent teams, automation</td>
             <td>$20/mo+</td>
             <td>Requires CLI comfort</td>
           </tr>
           <tr>
             <td><strong>Mobile</strong></td>
-            <td>On-the-go companion</td>
-            <td>Free - $20/mo</td>
-            <td>No Claude Code, no voice mode</td>
+            <td>On-the-go + Claude Code (iOS)</td>
+            <td>Free — $20/mo</td>
+            <td>No real-time voice, no MCP</td>
           </tr>
           <tr>
             <td><strong>Chrome Extension</strong></td>
@@ -1644,17 +1798,21 @@ h4, .h4 {
           </tr>
           <tr>
             <td><strong>Cowork</strong></td>
-            <td>File automation (non-dev)</td>
-            <td>$20-200/mo</td>
-            <td>Security concerns, Mac only</td>
+            <td>File automation + plugins</td>
+            <td>$20—200/mo</td>
+            <td>Security concerns, no Linux</td>
           </tr>
         </tbody>
       </table>
+      <div class="mt-sm" style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <span class="text-xs muted">Also available via API: Computer Use, Agent SDK, Batch processing</span>
+        <span class="text-xs muted">Platforms: AWS Bedrock, Google Vertex AI, Azure AI Foundry</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 19: RECOMMENDATIONS -->
+<!-- SLIDE 20: RECOMMENDATIONS -->
 <section>
   <div class="slide">
     <div class="header">
@@ -1669,15 +1827,15 @@ h4, .h4 {
           <h3 class="mt-md">Claude Chat</h3>
           <p class="text-sm muted">Free. Learn the basics.</p>
         </div>
-        <div class="card card--glow fragment fade-up">
+        <div class="card card--featured fragment fade-up">
           <span class="badge">Most People</span>
-          <h3 class="mt-md">Desktop Code Tab</h3>
-          <p class="text-sm muted">$20/mo. Coding without terminal.</p>
+          <h3 class="mt-md">Code Desktop</h3>
+          <p class="text-sm muted">$20/mo. Full power, visual interface.</p>
         </div>
         <div class="card fragment fade-up">
-          <span class="badge" style="background: rgba(34, 211, 238, 0.15); color: #22D3EE; border-color: rgba(34, 211, 238, 0.3);">Developer</span>
+          <span class="badge" style="color: #6ba3b0; border-color: #6ba3b0;">Developer</span>
           <h3 class="mt-md">Terminal CLI</h3>
-          <p class="text-sm muted">$20/mo + API. Full power.</p>
+          <p class="text-sm muted">$20/mo + API. SSH, --chrome, scripts.</p>
         </div>
         <div class="card fragment fade-up">
           <span class="badge badge--warning">Browser Tasks</span>
@@ -1685,34 +1843,34 @@ h4, .h4 {
           <p class="text-sm muted">$20/mo. Know Pro=Haiku.</p>
         </div>
         <div class="card fragment fade-up">
-          <span class="badge" style="background: rgba(236, 72, 153, 0.15); color: #EC4899; border-color: rgba(236, 72, 153, 0.3);">On Mobile</span>
-          <h3 class="mt-md">Chat + Monitor</h3>
-          <p class="text-sm muted">Don't expect Claude Code.</p>
+          <span class="badge" style="color: #a87b9b; border-color: #a87b9b;">On Mobile</span>
+          <h3 class="mt-md">iOS App</h3>
+          <p class="text-sm muted">Chat + Claude Code natively.</p>
         </div>
         <div class="card card--warning fragment fade-up">
           <span class="badge badge--danger">File Automation</span>
-          <h3 class="mt-md">Wait on Cowork</h3>
-          <p class="text-sm muted">Or learn terminal safely.</p>
+          <h3 class="mt-md">Caution on Cowork</h3>
+          <p class="text-sm muted">Useful but avoid sensitive files.</p>
         </div>
       </div>
-      <div class="card mt-lg" style="background: var(--pres-gradient-dark); text-align: center;">
+      <div class="card mt-lg" style="background: var(--bg-card); text-align: center;">
         <h4>Everyone</h4>
-        <p class="text-sm">Go to <strong style="color: var(--pres-purple);">console.anthropic.com</strong> and use the Prompt Generator. Free and incredibly useful.</p>
+        <p class="text-sm">Go to <strong style="color: var(--accent);">console.anthropic.com</strong> and use the Prompt Generator. Free and incredibly useful.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 20: CTA -->
+<!-- SLIDE 21: CTA -->
 <section>
-  <div class="slide slide--gradient slide--center">
+  <div class="slide slide--section slide--center">
     <div class="content flex-center" style="flex-direction: column;">
-      <h1>The Infrastructure<br><span class="gradient-text">Is The Future</span></h1>
+      <h1>The Infrastructure<br><span class="accent-text">Is The Future</span></h1>
       <p class="lead" style="max-width: 700px; margin: 20px auto;">
-        MCP, hooks, skills, sub-agents. Features will update. Prices will shift. But this architecture is Anthropic's direction.
+        MCP, hooks, skills, agent teams, connectors, computer use. Features will update. Prices will shift. But this architecture is Anthropic's direction.
       </p>
-      <div class="card card--glow mt-lg" style="max-width: 600px; text-align: center;">
-        <p style="font-size: 1.5rem; margin-bottom: 16px;">Understanding this ecosystem makes you <span class="gradient-text">dangerous</span>.</p>
+      <div class="card card--featured mt-lg" style="max-width: 600px; text-align: center;">
+        <p style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 16px;">Understanding this ecosystem makes you <span class="accent-text">dangerous</span>.</p>
         <p class="muted">Not just with Claude. With AI overall.</p>
       </div>
       <div style="margin-top: 40px;">
